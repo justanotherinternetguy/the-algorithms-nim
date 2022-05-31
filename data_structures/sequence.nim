@@ -44,8 +44,6 @@ echo foo.foldl(a+b) # sum
 
 
 
-
-
 # join  w/ strutils #
 var vowels = @"aeiou"
 echo vowels
