@@ -32,3 +32,22 @@ echo "--------------------------------------------------------------------------
 
 # DOUBLY LINKED #
 # 2 <-> 3 <-> 5 <-> 8 
+var doubly = initDoublyLinkedList[int]()
+
+let
+  d_a = newDoublyLinkedNode[int](3)
+  d_b = newDoublyLinkedNode[int](6)
+  d_c = newDoublyLinkedNode[int](7)
+
+
+doubly.add(d_a)
+doubly.add(d_b)
+doubly.prepend(d_c)
+
+echo doubly
+echo d_c.next == d_a
+echo d_c.prev == nil
+
+echo "------------------------------------------------------------------------------"
+
+
