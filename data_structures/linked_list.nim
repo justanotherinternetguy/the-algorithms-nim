@@ -31,7 +31,11 @@ echo "--------------------------------------------------------------------------
 
 
 # DOUBLY LINKED #
-# 2 <-> 3 <-> 5 <-> 8 
+#[
+  3 <-> 6 <-> 7
+]#
+
+
 var doubly = initDoublyLinkedList[int]()
 
 let
@@ -50,4 +54,22 @@ echo d_c.prev == nil
 
 echo "------------------------------------------------------------------------------"
 
+# RINGED / CIRCULAR SINGLY LINKED #
+#[
+  1 -> 3 -> 5 -> 7 -> head(1)
+]#
 
+var ring_single = initSinglyLinkedRing[int]()
+let
+  rs_a = newSinglyLinkedNode[int](1)
+  rs_b = newSinglyLinkedNode[int](3)
+  rs_c = newSinglyLinkedNode[int](5)
+  rs_d = newSinglyLinkedNode[int](7)
+
+ring_single.add(rs_b)
+ring_single.add(rs_c)
+ring_single.add(rs_d)
+ring_single.prepend(rs_a)
+
+echo ring_single
+echo rs_d.next == rs_a # points back to head #
